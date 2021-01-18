@@ -1,0 +1,643 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TimeTracker</name>
+    </assembly>
+    <members>
+        <member name="T:TimeTracker.Controllers.ClientsController">
+            <summary>
+            Clients endpoint of TimeTracker API.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Controllers.ClientsController.#ctor(TimeTracker.Data.TimeTrackerDbContext,Microsoft.Extensions.Logging.ILogger{TimeTracker.Controllers.ClientsController})">
+            <summary>
+            Creates a new instance of <see cref="T:TimeTracker.Controllers.ClientsController"/> with given dependencies.
+            </summary>
+            <param name="dbContext">DB context instance.</param>
+            <param name="logger">Logger instance.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.ClientsController.GetById(System.Int64)">
+            <summary>
+            Get a single client by id.
+            </summary>
+            <param name="id">Id of the client to retrieve.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.ClientsController.GetPage(System.Int32,System.Int32)">
+            <summary>
+            Get one page of clients.
+            </summary>
+            <param name="page">Page number.</param>
+            <param name="size">Page size.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.ClientsController.Delete(System.Int64)">
+            <summary>
+            Delete a single client with the given id.
+            </summary>
+            <param name="id">Id of the client to delete.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.ClientsController.Create(TimeTracker.Models.ClientInputModel)">
+            <summary>
+            Create a new client from the supplied data.
+            </summary>
+            <param name="model">Data to create the client from.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.ClientsController.Update(System.Int64,TimeTracker.Models.ClientInputModel)">
+            <summary>
+            Modify the client with the given id, using the supplied data.
+            </summary>
+            <param name="id">Id of the client to modify.</param>
+            <param name="model">Data to modify the client from.</param>
+        </member>
+        <member name="T:TimeTracker.Controllers.ProjectsController">
+            <summary>
+            Projects endpoint for TimeTracker API.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Controllers.ProjectsController.#ctor(TimeTracker.Data.TimeTrackerDbContext,Microsoft.Extensions.Logging.ILogger{TimeTracker.Controllers.ProjectsController})">
+            <summary>
+            Creates a new instance of <see cref="T:TimeTracker.Controllers.ProjectsController"/> with given dependencies.
+            </summary>
+            <param name="dbContext">DB context instance.</param>
+            <param name="logger">Logger instance.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.ProjectsController.GetById(System.Int64)">
+            <summary>
+            Get a single project by id.
+            </summary>
+            <param name="id">Id of the project to retrieve.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.ProjectsController.GetPage(System.Int32,System.Int32)">
+            <summary>
+            Get one page of projects.
+            </summary>
+            <param name="page">Page number.</param>
+            <param name="size">Page size.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.ProjectsController.Delete(System.Int64)">
+            <summary>
+            Delete a single project with the given id.
+            </summary>
+            <param name="id">Id of the project to delete.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.ProjectsController.Create(TimeTracker.Models.ProjectInputModel)">
+            <summary>
+            Create a new project from the supplied data.
+            </summary>
+            <param name="model">Data to create the project from.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.ProjectsController.Update(System.Int64,TimeTracker.Models.ProjectInputModel)">
+            <summary>
+            Modify the project with the given id, using the supplied data.
+            </summary>
+            <param name="id">Id of the project to modify.</param>
+            <param name="model">Data to modify the project from.</param>
+        </member>
+        <member name="T:TimeTracker.Controllers.TimeEntriesController">
+            <summary>
+            Time entries endpoint of TimeTracker API.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Controllers.TimeEntriesController.#ctor(TimeTracker.Data.TimeTrackerDbContext,Microsoft.Extensions.Logging.ILogger{TimeTracker.Controllers.TimeEntriesController})">
+            <summary>
+            Creates a new instance of see <see cref="T:TimeTracker.Controllers.TimeEntriesController"/> with given dependencies.
+            </summary>
+            <param name="dbContext">DB context instance.</param>
+            <param name="logger">Logger instance.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.TimeEntriesController.GetById(System.Int64)">
+            <summary>
+            Get a single time entry by id.
+            </summary>
+            <param name="id">Id of the time entry to retrieve.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.TimeEntriesController.GetByUserAndMonth(System.Int64,System.Int32,System.Int32)">
+            <summary>
+            Gets a list of time entries for a specified user and month.
+            </summary>
+            <param name="userId">User id to get the entries for.</param>
+            <param name="year">Year of the time entry.</param>
+            <param name="month">Month of the time entry.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.TimeEntriesController.GetPage(System.Int32,System.Int32)">
+            <summary>
+            Get one page of time entries.
+            </summary>
+            <param name="page">Page number.</param>
+            <param name="size">Page size.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.TimeEntriesController.Delete(System.Int64)">
+            <summary>
+            Delete a single time entry with the given id.
+            </summary>
+            <param name="id">Id of the time entry to delete.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.TimeEntriesController.Create(TimeTracker.Models.TimeEntryInputModel)">
+            <summary>
+            Create a new time entry from the supplied data.
+            </summary>
+            <param name="model">Data to create the time entry from.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.TimeEntriesController.Update(System.Int64,TimeTracker.Models.TimeEntryInputModel)">
+            <summary>
+            Modify the time entry with the given id, using the supplied data.
+            </summary>
+            <param name="id">Id of the time entry to modify.</param>
+            <param name="model">Data to modify the time entry from.</param>
+        </member>
+        <member name="T:TimeTracker.Controllers.UsersController">
+            <summary>
+            Users endpoint of TimeTracker API.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Controllers.UsersController.#ctor(TimeTracker.Data.TimeTrackerDbContext,Microsoft.Extensions.Logging.ILogger{TimeTracker.Controllers.UsersController})">
+            <summary>
+            Creates a new instance of <see cref="T:TimeTracker.Controllers.UsersController"/> with given dependencies.
+            </summary>
+            <param name="dbContext">DB context instance.</param>
+            <param name="logger">Logger instance.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.UsersController.GetById(System.Int64)">
+            <summary>
+            Get a single user by id.
+            </summary>
+            <param name="id">Id of the user to retrieve.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.UsersController.GetPage(System.Int32,System.Int32)">
+            <summary>
+            Get one page of users.
+            </summary>
+            <param name="page">Page number.</param>
+            <param name="size">Page size.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.UsersController.Delete(System.Int64)">
+            <summary>
+            Delete a single user with the given id.
+            </summary>
+            <param name="id">Id of the user to delete.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.UsersController.Create(TimeTracker.Models.UserInputModel)">
+            <summary>
+            Create a new user from the supplied data.
+            </summary>
+            <param name="model">Data to create the user from.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.UsersController.Update(System.Int64,TimeTracker.Models.UserInputModel)">
+            <summary>
+            Modify the user with the given id, using the supplied data.
+            </summary>
+            <param name="id">Id of the user to modify.</param>
+            <param name="model">Data to modify the user from.</param>
+        </member>
+        <member name="T:TimeTracker.Controllers.V1.ClientsController">
+            <summary>
+            Clients endpoint of TimeTracker API.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.ClientsController.#ctor(TimeTracker.Data.TimeTrackerDbContext,Microsoft.Extensions.Logging.ILogger{TimeTracker.Controllers.V1.ClientsController})">
+            <summary>
+            Creates a new instance of <see cref="T:TimeTracker.Controllers.V1.ClientsController"/> with given dependencies.
+            </summary>
+            <param name="dbContext">DB context instance.</param>
+            <param name="logger">Logger instance.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.ClientsController.GetById(System.Int64)">
+            <summary>
+            Get a single client by id.
+            </summary>
+            <param name="id">Id of the client to retrieve.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.ClientsController.GetPage(System.Int32,System.Int32)">
+            <summary>
+            Get one page of clients.
+            </summary>
+            <param name="page">Page number.</param>
+            <param name="size">Page size.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.ClientsController.Delete(System.Int64)">
+            <summary>
+            Delete a single client with the given id.
+            </summary>
+            <param name="id">Id of the client to delete.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.ClientsController.Create(TimeTracker.Models.ClientInputModel)">
+            <summary>
+            Create a new client from the supplied data.
+            </summary>
+            <param name="model">Data to create the client from.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.ClientsController.Update(System.Int64,TimeTracker.Models.ClientInputModel)">
+            <summary>
+            Modify the client with the given id, using the supplied data.
+            </summary>
+            <param name="id">Id of the client to modify.</param>
+            <param name="model">Data to modify the client from.</param>
+        </member>
+        <member name="T:TimeTracker.Controllers.V1.ProjectsController">
+            <summary>
+            Projects endpoint for TimeTracker API.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.ProjectsController.#ctor(TimeTracker.Data.TimeTrackerDbContext,Microsoft.Extensions.Logging.ILogger{TimeTracker.Controllers.V1.ProjectsController})">
+            <summary>
+            Creates a new instance of <see cref="T:TimeTracker.Controllers.V1.ProjectsController"/> with given dependencies.
+            </summary>
+            <param name="dbContext">DB context instance.</param>
+            <param name="logger">Logger instance.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.ProjectsController.GetById(System.Int64)">
+            <summary>
+            Get a single project by id.
+            </summary>
+            <param name="id">Id of the project to retrieve.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.ProjectsController.GetPage(System.Int32,System.Int32)">
+            <summary>
+            Get one page of projects.
+            </summary>
+            <param name="page">Page number.</param>
+            <param name="size">Page size.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.ProjectsController.Delete(System.Int64)">
+            <summary>
+            Delete a single project with the given id.
+            </summary>
+            <param name="id">Id of the project to delete.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.ProjectsController.Create(TimeTracker.Models.ProjectInputModel)">
+            <summary>
+            Create a new project from the supplied data.
+            </summary>
+            <param name="model">Data to create the project from.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.ProjectsController.Update(System.Int64,TimeTracker.Models.ProjectInputModel)">
+            <summary>
+            Modify the project with the given id, using the supplied data.
+            </summary>
+            <param name="id">Id of the project to modify.</param>
+            <param name="model">Data to modify the project from.</param>
+        </member>
+        <member name="T:TimeTracker.Controllers.V1.TimeEntriesController">
+            <summary>
+            Time entries endpoint of TimeTracker API.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.TimeEntriesController.#ctor(TimeTracker.Data.TimeTrackerDbContext,Microsoft.Extensions.Logging.ILogger{TimeTracker.Controllers.V1.TimeEntriesController})">
+            <summary>
+            Creates a new instance of see <see cref="T:TimeTracker.Controllers.V1.TimeEntriesController"/> with given dependencies.
+            </summary>
+            <param name="dbContext">DB context instance.</param>
+            <param name="logger">Logger instance.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.TimeEntriesController.GetById(System.Int64)">
+            <summary>
+            Get a single time entry by id.
+            </summary>
+            <param name="id">Id of the time entry to retrieve.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.TimeEntriesController.GetByUserAndMonth(System.Int64,System.Int32,System.Int32)">
+            <summary>
+            Gets a list of time entries for a specified user and month.
+            </summary>
+            <param name="userId">User id to get the entries for.</param>
+            <param name="year">Year of the time entry.</param>
+            <param name="month">Month of the time entry.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.TimeEntriesController.GetPage(System.Int32,System.Int32)">
+            <summary>
+            Get one page of time entries.
+            </summary>
+            <param name="page">Page number.</param>
+            <param name="size">Page size.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.TimeEntriesController.Delete(System.Int64)">
+            <summary>
+            Delete a single time entry with the given id.
+            </summary>
+            <param name="id">Id of the time entry to delete.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.TimeEntriesController.Create(TimeTracker.Models.TimeEntryInputModel)">
+            <summary>
+            Create a new time entry from the supplied data.
+            </summary>
+            <param name="model">Data to create the time entry from.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.TimeEntriesController.Update(System.Int64,TimeTracker.Models.TimeEntryInputModel)">
+            <summary>
+            Modify the time entry with the given id, using the supplied data.
+            </summary>
+            <param name="id">Id of the time entry to modify.</param>
+            <param name="model">Data to modify the time entry from.</param>
+        </member>
+        <member name="T:TimeTracker.Controllers.V1.UsersController">
+            <summary>
+            Users endpoint of TimeTracker API.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.UsersController.#ctor(TimeTracker.Data.TimeTrackerDbContext,Microsoft.Extensions.Logging.ILogger{TimeTracker.Controllers.V1.UsersController})">
+            <summary>
+            Creates a new instance of <see cref="T:TimeTracker.Controllers.V1.UsersController"/> with given dependencies.
+            </summary>
+            <param name="dbContext">DB context instance.</param>
+            <param name="logger">Logger instance.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.UsersController.GetById(System.Int64)">
+            <summary>
+            Get a single user by id.
+            </summary>
+            <param name="id">Id of the user to retrieve.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.UsersController.GetPage(System.Int32,System.Int32)">
+            <summary>
+            Get one page of users.
+            </summary>
+            <param name="page">Page number.</param>
+            <param name="size">Page size.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.UsersController.Delete(System.Int64)">
+            <summary>
+            Delete a single user with the given id.
+            </summary>
+            <param name="id">Id of the user to delete.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.UsersController.Create(TimeTracker.Models.UserInputModel)">
+            <summary>
+            Create a new user from the supplied data.
+            </summary>
+            <param name="model">Data to create the user from.</param>
+        </member>
+        <member name="M:TimeTracker.Controllers.V1.UsersController.Update(System.Int64,TimeTracker.Models.UserInputModel)">
+            <summary>
+            Modify the user with the given id, using the supplied data.
+            </summary>
+            <param name="id">Id of the user to modify.</param>
+            <param name="model">Data to modify the user from.</param>
+        </member>
+        <member name="T:TimeTracker.Models.ClientInputModel">
+            <summary>
+            Represents a single client to add or modify.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.ClientInputModel.Name">
+            <summary>
+            Gets or sets the client name.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Models.ClientInputModel.MapTo(TimeTracker.Domain.Client)">
+            <summary>
+            Maps the current model into a <see cref="T:TimeTracker.Domain.Client"/> instance.
+            </summary>
+            <param name="client">A client instance to modify.</param>
+        </member>
+        <member name="T:TimeTracker.Models.ClientModel">
+            <summary>
+            Represents a single client.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.ClientModel.Id">
+            <summary>
+            Gets or sets the client id.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.ClientModel.Name">
+            <summary>
+            Gets or sets the client name.
+            </summary>
+        </member>
+        <member name="T:TimeTracker.Models.PagedList`1">
+            <summary>
+            Represents a single page of items with additional paging information like
+            page size, total count and total page size.
+            </summary>
+            <typeparam name="T">Type of the item in the list.</typeparam>
+        </member>
+        <member name="P:TimeTracker.Models.PagedList`1.Items">
+            <summary>
+            Gets or sets one page of items.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.PagedList`1.Page">
+            <summary>
+            Gets or sets the page number.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.PagedList`1.PageSize">
+            <summary>
+            Gets or sets the page size.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.PagedList`1.TotalCount">
+            <summary>
+            Gets or sets the total item count.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.PagedList`1.TotalPages">
+            <summary>
+            Gets the total page count.
+            </summary>
+        </member>
+        <member name="T:TimeTracker.Models.ProjectInputModel">
+            <summary>
+            Represents a single project to add or modify.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.ProjectInputModel.Name">
+            <summary>
+            Gets or sets the project name.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.ProjectInputModel.ClientId">
+            <summary>
+            Gets or sets the client id that the project belongs to.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Models.ProjectInputModel.MapTo(TimeTracker.Domain.Project)">
+            <summary>
+            Map the current model into a <see cref="T:TimeTracker.Domain.Project"/> instance.
+            </summary>
+            <param name="project">A project instance to modify.</param>
+        </member>
+        <member name="T:TimeTracker.Models.ProjectModel">
+            <summary>
+            Represents a single project.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.ProjectModel.Id">
+            <summary>
+            Gets or sets the project id.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.ProjectModel.Name">
+            <summary>
+            Gets or sets the project name.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.ProjectModel.ClientId">
+            <summary>
+            Gets or sets the id of the client that owns this project.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.ProjectModel.ClientName">
+            <summary>
+            Gets or sets the name of the client that owns this project.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Models.ProjectModel.FromProject(TimeTracker.Domain.Project)">
+            <summary>
+            Creates a new instance of <see cref="T:TimeTracker.Models.ProjectModel"/> from the given <see cref="T:TimeTracker.Domain.Project"/> instance.
+            </summary>
+            <param name="project">A <see cref="T:TimeTracker.Domain.Project"/> instance to convert to <see cref="T:TimeTracker.Models.ProjectModel"/>.</param>
+            <returns>A new instance of <see cref="T:TimeTracker.Models.ProjectModel"/>.</returns>
+        </member>
+        <member name="T:TimeTracker.Models.TimeEntryInputModel">
+            <summary>
+            Represents a single instance of time entry to add or modify.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryInputModel.UserId">
+            <summary>
+            Gets or sets the id of the user that this time entry belongs to.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryInputModel.ProjectId">
+            <summary>
+            Gets or sets the id of the project that this time entry refers to.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryInputModel.EntryDate">
+            <summary>
+            Gets or sets the time entry date.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryInputModel.Hours">
+            <summary>
+            Gets or sets the number of hours spent on a task.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryInputModel.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Models.TimeEntryInputModel.MapTo(TimeTracker.Domain.TimeEntry)">
+            <summary>
+            Map the current model into an instance of <see cref="T:TimeTracker.Domain.TimeEntry"/>.
+            </summary>
+            <param name="timeEntry">A <see cref="T:TimeTracker.Domain.TimeEntry"/> instance to modify.</param>
+        </member>
+        <member name="T:TimeTracker.Models.TimeEntryModel">
+            <summary>
+            Represents a single time entry.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryModel.Id">
+            <summary>
+            Gets or sets the id of the time entry.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryModel.UserId">
+            <summary>
+            Gets or sets the id of the user that this time entry belongs to.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryModel.UserName">
+            <summary>
+            Gets or sets the name of the user that this time entry belongs to.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryModel.ProjectId">
+            <summary>
+            Gets or sets the id of the project that this time entry refers to.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryModel.ProjectName">
+            <summary>
+            Gets or sets the name of the project that this time entry refers to.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryModel.ClientId">
+            <summary>
+            Gets or sets the id of the client that this time entry refers to.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryModel.ClientName">
+            <summary>
+            Gets or sets the name of the client that this time entry refers to.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryModel.EntryDate">
+            <summary>
+            Gets or sets the time entry date.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryModel.Hours">
+            <summary>
+            Gets or sets the number of hours spent on the task.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryModel.HourRate">
+            <summary>
+            Gets or sets the user's hour rate for this time entry.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.TimeEntryModel.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Models.TimeEntryModel.FromTimeEntry(TimeTracker.Domain.TimeEntry)">
+            <summary>
+            Creates a new instance of <see cref="T:TimeTracker.Models.TimeEntryModel"/> from the instance of <see cref="T:TimeTracker.Domain.TimeEntry"/>.
+            </summary>
+            <param name="timeEntry">A <see cref="T:TimeTracker.Domain.TimeEntry"/> instance to convert to <see cref="T:TimeTracker.Models.TimeEntryModel"/>.</param>
+            <returns>A new instance of <see cref="T:TimeTracker.Models.TimeEntryModel"/>.</returns>
+        </member>
+        <member name="T:TimeTracker.Models.UserInputModel">
+            <summary>
+            Represents a single user to add or modify.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.UserInputModel.Name">
+            <summary>
+            Gets or sets the user name.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.UserInputModel.HourRate">
+            <summary>
+            Gets or sets the user hour rate.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Models.UserInputModel.MapTo(TimeTracker.Domain.User)">
+            <summary>
+            Maps the current model to the instance of <see cref="T:TimeTracker.Domain.User"/>.
+            </summary>
+            <param name="user">A <see cref="T:TimeTracker.Domain.User"/> instance to modify.</param>
+        </member>
+        <member name="T:TimeTracker.Models.UserModel">
+            <summary>
+            Represents a single user.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.UserModel.Id">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.UserModel.Name">
+            <summary>
+            Gets or sets the user name.
+            </summary>
+        </member>
+        <member name="P:TimeTracker.Models.UserModel.HourRate">
+            <summary>
+            Gets or sets the user hour rate.
+            </summary>
+        </member>
+        <member name="M:TimeTracker.Models.UserModel.FromUser(TimeTracker.Domain.User)">
+            <summary>
+            Creates a new instance of <see cref="T:TimeTracker.Models.UserModel"/> from an instance of <see cref="T:TimeTracker.Domain.User"/>.
+            </summary>
+            <param name="user">An instance of <see cref="T:TimeTracker.Domain.User"/> to convert to <see cref="T:TimeTracker.Models.UserModel"/>.</param>
+            <returns>A new instance of <see cref="T:TimeTracker.Models.UserModel"/>.</returns>
+        </member>
+    </members>
+</doc>

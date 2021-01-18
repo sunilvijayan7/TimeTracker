@@ -1,0 +1,67 @@
+﻿@page "/login"
+@using TimeTracker.Client.Models
+@using TimeTracker.Client.Security
+@using TimeTracker.Client.Services
+@inject HttpClient Http
+@inject ApiService ApiService
+@inject TokenAuthenticationStateProvider AuthStateProvider
+@inject NavigationManager NavigationManager
+
+<h1>Login</h1>
+
+<EditForm Model="@this">
+    <div class="form-group">
+        <label for="userId">User ID:</label>
+        <InputText id="userId" @bind-Value="userId" class="form-control" />
+    </div>
+
+    @if (!string.IsNullOrWhiteSpace(errorMessage))
+    {
+        <div class="alert alert-danger">
+            @errorMessage
+        </div>
+    }
+
+    <button type="button" class="btn btn-secondary" @onclick="LogInRegular">Login as Regular User</button>
+    <button type="button" class="btn btn-primary" @onclick="LogInAdmin">Login as Admin User</button>
+</EditForm>
+
+@code {
+    string errorMessage;
+    string userId = string.Empty;
+
+    public Task LogInRegular()
+    {
+        return LogIn(false);
+    }
+
+    public Task LogInAdmin()
+    {
+        return LogIn(true);
+    }
+
+    private async Task LogIn(bool admin)
+    {
+        var url = Config.TokenUrl;
+        if (admin)
+        {
+            url += "?admin=true";
+        }
+
+        errorMessage = string.Empty;
+
+        try
+        {
+            var token = await Http.GetStringAsync(url);
+            var user = await ApiService.GetAsync<UserModel>($"users/{userId}", token);
+
+            await AuthStateProvider.SetTokenAndUserAsync(token, user);
+
+            NavigationManager.NavigateTo("/");
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+    }
+}

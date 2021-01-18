@@ -1,0 +1,47 @@
+@page "/users/{id:long}/delete"
+@using TimeTracker.Client.Models
+@using TimeTracker.Client.Services
+@attribute [Authorize]
+@inject ApiService ApiService
+@inject NavigationManager NavigationManager
+
+<h1>Delete user @(user == null ? string.Empty : user.Name)</h1>
+
+<div class="alert alert-warning">Are you sure you want to delete this user?</div>
+
+@if (!string.IsNullOrWhiteSpace(errorMessage))
+{
+    <div class="alert alert-danger">@errorMessage</div>
+}
+
+<button type="button" class="btn btn-danger" @onclick="DeleteUser">Delete</button>
+<a href="/users" class="btn btn-link">Cancel</a>
+
+@code {
+    [Parameter] public long Id { get; set; }
+    private UserModel user;
+    private string errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadUser();
+    }
+
+    private async Task LoadUser()
+    {
+        var url = $"users/{Id}";
+        user = await ApiService.GetAsync<UserModel>(url);
+    }
+
+    private async Task DeleteUser()
+    {
+        if (await ApiService.DeleteAsync($"users/{user.Id}"))
+        {
+            NavigationManager.NavigateTo("/users");
+        }
+        else
+        {
+            errorMessage = "Error saving user";
+        }
+    }
+}

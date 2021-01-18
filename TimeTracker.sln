@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker", "TimeTracker\TimeTracker.csproj", "{E9CC38E5-CF30-4612-B581-19A75B7E9A4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Tests", "TimeTracker.Tests\TimeTracker.Tests.csproj", "{5F9F8ED4-1706-4516-86B9-1587A83EFE6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Client", "TimeTracker.Client\TimeTracker.Client.csproj", "{3F32D330-5D8A-4EAF-92ED-F68F172D5D70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9CC38E5-CF30-4612-B581-19A75B7E9A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9CC38E5-CF30-4612-B581-19A75B7E9A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9CC38E5-CF30-4612-B581-19A75B7E9A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9CC38E5-CF30-4612-B581-19A75B7E9A4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F9F8ED4-1706-4516-86B9-1587A83EFE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9F8ED4-1706-4516-86B9-1587A83EFE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9F8ED4-1706-4516-86B9-1587A83EFE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9F8ED4-1706-4516-86B9-1587A83EFE6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F32D330-5D8A-4EAF-92ED-F68F172D5D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F32D330-5D8A-4EAF-92ED-F68F172D5D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F32D330-5D8A-4EAF-92ED-F68F172D5D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F32D330-5D8A-4EAF-92ED-F68F172D5D70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57E41C9B-4B00-4337-9C16-26B59A4C1FC1}
+	EndGlobalSection
+EndGlobal
