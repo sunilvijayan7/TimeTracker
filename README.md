@@ -68,8 +68,6 @@ dotnet-cake build.cake --task="Publish"
 * Integration Tests with XUnit
 * Material design
 * Realtime update on employee logs
-* ![Realtime Demo](realtime-demo.gif)
-
 
 ### Includes ###
 
